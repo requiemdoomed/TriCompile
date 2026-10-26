@@ -1,4 +1,4 @@
-# TriCompile
+# [TriCompile](https://requiemdoomed.github.io/TriCompile/)
 **Author: Swayam Shakya**
 
 A retro code laboratory for learning how programs execute. Write simple commands, inspect stack instructions, step through variables, or run Python, JavaScript, C and C++ with installed local toolchains.
@@ -42,24 +42,9 @@ Each educational statement occupies one line. Strings use quotes. Arithmetic sup
 
 Assembly instructions: PUSH, LOAD, STORE, ADD, SUB, MUL, DIV, MOD, EQ, NE, LT, LE, GT, GE, PRINT, JMP, JZ, HALT. JMP/JZ take zero-based numeric addresses; JZ consumes its condition. End assembly programs with HALT. VM bytecode consists of `TCMP`, version byte 1, and UTF-8 JSON instructions. Hex and binary views show those actual serialized bytes. This is an educational VM format, not x86 or ARM machine code.
 
-## Architecture
-- `index.html`: responsive editor, output, language chooser, file controls and inspection.
-- `server.py`: loopback HTTP API with per-session request token.
-- `core.py`: expression parser, statement compiler, validation, serialization and VM.
-- `runners.py`: local runtime/compiler adapters.
-- `TriCompile.ipynb`: executable walkthrough, assertions and server launcher.
-- `tests/test_system.py`: compiler, runtime and HTTP integration tests.
-
-Debug stepping replays a deterministic program to the requested instruction count, so the server stores no debugger sessions. Native languages use their own compilers; their internals are not translated into TriCompile VM instructions. Compile/Check validates native code; native executables are temporary and are not exported.
-
 ## Tests
 ```sh
 python -m unittest discover -s tests -v
 ```
 See `TEST_RESULTS.txt` for the actual build-time run. Tests execute real programs in all four installed toolchains, compare outputs, check errors, enforce a timeout, and exercise the local HTTP API. No model training is involved. Testing does not guarantee every program or operating system is error-free. Windows and macOS require local verification.
 
-## Execution boundaries
-Run trusted personal code only. Native programs run with your account's permissions: temporary directories and timeouts are **not a security sandbox**. Do not expose this server publicly. Native execution has a 5-second timeout, compilation 15 seconds, and returned output is capped at 64 KiB per stream. Temporary output on disk is not quota-limited; there is no native memory/network/filesystem isolation. VM execution stops at 10,000 instructions. The UI waits for requests to finish; there is no interactive Stop button. Breakpoints, user-defined test suites and native step-debugging are future work.
-
-## License
-MIT. See LICENSE.
