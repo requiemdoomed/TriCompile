@@ -1,0 +1,23 @@
+test_assembly_roundtrip (test_system.CompilerTests.test_assembly_roundtrip) ... ok
+test_bad_bytecode (test_system.CompilerTests.test_bad_bytecode) ... ok
+test_branches (test_system.CompilerTests.test_branches) ... ok
+test_errors (test_system.CompilerTests.test_errors) ... ok
+test_highlevel (test_system.CompilerTests.test_highlevel) ... ok
+test_loop (test_system.CompilerTests.test_loop) ... ok
+test_nested (test_system.CompilerTests.test_nested) ... ok
+test_runtime_errors (test_system.CompilerTests.test_runtime_errors) ... ok
+test_step (test_system.CompilerTests.test_step) ... ok
+test_compile_errors (test_system.NativeTests.test_compile_errors) ... ok
+test_real_programs (test_system.NativeTests.test_real_programs) ... ok
+test_timeout (test_system.NativeTests.test_timeout) ... ok
+test_api (test_system.WebTests.test_api) ... ok
+test_page (test_system.WebTests.test_page) ... ok
+test_unauthorized (test_system.WebTests.test_unauthorized) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 6.340s
+
+OK
+TriCompile: http://127.0.0.1:8765
+
+Additional validation: all notebook code cells executed successfully; interface JavaScript passed node --check. Tested on Linux. Browser visual testing and Windows/macOS execution were not performed.
