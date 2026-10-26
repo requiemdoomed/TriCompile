@@ -42,3 +42,8 @@ Each educational statement occupies one line. Strings use quotes. Arithmetic sup
 
 Assembly instructions: PUSH, LOAD, STORE, ADD, SUB, MUL, DIV, MOD, EQ, NE, LT, LE, GT, GE, PRINT, JMP, JZ, HALT. JMP/JZ take zero-based numeric addresses; JZ consumes its condition. End assembly programs with HALT. VM bytecode consists of `TCMP`, version byte 1, and UTF-8 JSON instructions. Hex and binary views show those actual serialized bytes. This is an educational VM format, not x86 or ARM machine code.
 
+
+## Author
+
+Swayam Shakya, 2026. MIT License.
+
